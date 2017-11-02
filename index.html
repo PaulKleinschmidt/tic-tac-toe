@@ -36,5 +36,29 @@
           </div>
         </div>
       </div>
+      <form id="sign-up">
+        <fieldset>
+          <legend>Sign up!</legend>
+          <input type="text" id="sign-up-email" name="credentials[email]" placeholder="Email">
+          <input type="text" id="sign-up-password" name="credentials[password]" placeholder="Password">
+          <input type="text" id="sign-up-password-confirmation" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+          <input type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+
+      <form id="sign-in">
+        <fieldset>
+          <legend>Sign in!</legend>
+          <input type="text" id="sign-in-email" name="credentials[email]" placeholder="Email">
+          <input type="text" id="sign-in-password" name="credentials[password]" placeholder="Password">
+
+          <input type="submit" name="submit" value="Sign in!">
+        </fieldset>
+      </form>
+
+      <form id="sign-out">
+        <legend>Sign Out</legend>
+        <input type="submit" name="submit" value="Sign Out">
+      </form>
     </body>
 </html>
