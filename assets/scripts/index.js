@@ -59,7 +59,7 @@ const checkWin = function () {
     console.log(marks[6] + ' wins!')
   } else if ((marks[0] === marks[3] && marks[3] === marks[6]) && (marks[0] !== 0)) { // vertical wins
     console.log(marks[0] + ' wins!')
-  } else if ((marks[1] === marks[4] && marks[4] === marks[7]) && (marks[0] !== 0)) {
+  } else if ((marks[1] === marks[4] && marks[4] === marks[7]) && (marks[1] !== 0)) {
     console.log(marks[1] + ' wins!')
   } else if ((marks[2] === marks[5] && marks[5] === marks[8]) && (marks[2] !== 0)) {
     console.log(marks[2] + ' wins!')
