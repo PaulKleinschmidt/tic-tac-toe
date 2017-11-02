@@ -7,6 +7,11 @@ $(() => {
   setAPIOrigin(location, config)
 })
 
+const marks = ['', '', '', '', '', '', '', '', '']
+
+const turn = function (marks, id) {
+
+}
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
