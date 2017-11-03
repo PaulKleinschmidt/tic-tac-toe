@@ -6,10 +6,9 @@ curl "${API}${URL_PATH}"\
   --include \
   --request POST \
   --header "Content-type: application/json" \
-  --header "Authorization: Token token=${TOKEN}"\
+  --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    {
-      "game": {
+    "game": {
       "id": 3,
       "cells": ["","","","","","","","",""],
       "over": false,

@@ -29,11 +29,22 @@ const changePasswordSuccess = function (data) {
   console.log('data is ' + data)
   $('#message').text('password change Successful')
 }
+
 const signOutSuccess = function () {
   $('#message').text('Sign Out Successful')
 }
+
 const signOutFailure = function () {
   $('#message').text('Sign Out Failed')
+}
+
+const createGameSuccess = function (data) {
+  $('#message').text('new game made')
+  console.log(data)
+}
+const createGameFailure = function (data) {
+  $('#message').text('please sign in')
+  console.log(data)
 }
 
 module.exports = {
@@ -44,5 +55,7 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  createGameSuccess,
+  createGameFailure
 }
