@@ -19,10 +19,13 @@ body {
 
 .col-centered {
   float: none;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
 }
 
+h1 {
+  text-align: center;
+}
 // .container {
 //   display: block;
 //   float: none;

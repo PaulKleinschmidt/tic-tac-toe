@@ -48,11 +48,13 @@ const changeTurn = function () { // this function returns either x or o by short
 
 $('.box').click(function () {
   console.log($(this).html())
-  if (($(this).html() !== 'x') && ($(this).html() !== 'o')) {
-    $(this).html(changeTurn())
-    marks.splice(this.id, 1, $(this).html()) // adds the last x or o to the marks array
-    console.log(marks)
-  } checkWin()
+  if (checkWin() === false) {
+    if (($(this).html() !== 'x') && ($(this).html() !== 'o')) {
+      $(this).html(changeTurn())
+      marks.splice(this.id, 1, $(this).html()) // adds the last x or o to the marks array
+      console.log(marks)
+    } checkWin()
+  }
 })
 
 const checkWin = function () {
@@ -72,6 +74,8 @@ const checkWin = function () {
     console.log(marks[0] + ' wins!')
   } else if ((marks[2] === marks[4] && marks[4] === marks[6]) && (marks[2] !== 0)) {
     console.log(marks[2] + ' wins!')
+  } else {
+    return false
   }
 }
 

@@ -21,8 +21,7 @@ const signInFailure = function (error) {
   $('#message').text('Signed in Failed')
 }
 
-const changePasswordFailure = function (error) {
-  console.error(error)
+const changePasswordFailure = function () {
   $('#message').text('password change Failed')
 }
 
