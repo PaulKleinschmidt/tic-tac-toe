@@ -2,9 +2,14 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
+const events = require('./auth/events')
 
 $(() => {
   setAPIOrigin(location, config)
+})
+
+$(() => {
+  events.addHandlers()
 })
 
 const marks = [0, 0, 0, 0, 0, 0, 0, 0, 0]
