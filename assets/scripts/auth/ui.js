@@ -41,9 +41,27 @@ const signOutFailure = function () {
 const createGameSuccess = function (data) {
   $('#message').text('new game made')
   console.log(data)
+  store.user.game = data.game
+  store.user.game.id = data.game.id
 }
 const createGameFailure = function (data) {
-  $('#message').text('please sign in')
+  $('#message').text('please sign in first')
+  console.log(data)
+}
+const updateGameSuccess = function (data) {
+  $('#message').text('game updated')
+  console.log(data)
+}
+const updateGameFailiure = function (data) {
+  $('#message').text('game could not be updated')
+  console.log(data)
+}
+const showGamesSuccess = function (data) {
+  $('#message').text('success')
+  console.log(data)
+}
+const showGamesFailiure = function (data) {
+  $('#message').text('cannot show games')
   console.log(data)
 }
 
@@ -57,5 +75,9 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   createGameSuccess,
-  createGameFailure
+  createGameFailure,
+  updateGameSuccess,
+  updateGameFailiure,
+  showGamesSuccess,
+  showGamesFailiure
 }
