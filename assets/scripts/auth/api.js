@@ -56,7 +56,7 @@ const updateGame = function (data) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: store.gameState
   })
 }
 const showGames = function (data) {

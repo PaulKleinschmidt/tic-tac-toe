@@ -1,4 +1,5 @@
 const store = require('../store')
+const events = require('./events')
 
 const signUpSuccess = function (data) {
   console.log(data)
@@ -40,9 +41,10 @@ const signOutFailure = function () {
 
 const createGameSuccess = function (data) {
   $('#message').text('new game made')
-  console.log(data)
   store.user.game = data.game
-  store.user.game.id = data.game.id
+  console.log('new game ' + data.game.games)
+  events.marks = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  events.turns = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 const createGameFailure = function (data) {
   $('#message').text('please sign in first')
@@ -50,7 +52,8 @@ const createGameFailure = function (data) {
 }
 const updateGameSuccess = function (data) {
   $('#message').text('game updated')
-  console.log(data)
+  console.log(store.user.game.over)
+  store.user.game.cells[store.gameState.game.cell.index] = store.gameState.game.cell.value
 }
 const updateGameFailiure = function (data) {
   $('#message').text('game could not be updated')
