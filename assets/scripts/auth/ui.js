@@ -3,7 +3,7 @@ const events = require('./events')
 
 const signUpSuccess = function (data) {
   console.log(data)
-  $('#message').text('Signed up successfull!')
+  $('#message').text('Signed up successfully!')
 }
 
 const signUpFailure = function (error) {
@@ -13,7 +13,7 @@ const signUpFailure = function (error) {
 
 const signInSuccess = function (data) {
   console.log(data)
-  $('#message').text('Signed in Successful')
+  $('#message').text('Signed in Successfully')
   $('#sign-out').css('display', 'block')
   $('#change-password').css('display', 'block')
   $('#sign-up').hide()
@@ -26,20 +26,20 @@ const signInSuccess = function (data) {
 
 const signInFailure = function (error) {
   console.error(error)
-  $('#message').text('Signed in Failed')
+  $('#message').text('sign in failed')
 }
 
 const changePasswordFailure = function () {
-  $('#message').text('password change Failed')
+  $('#message').text('password change failed')
 }
 
 const changePasswordSuccess = function (data) {
   console.log('data is ' + data)
-  $('#message').text('password change Successful')
+  $('#message').text('password change successful')
 }
 
 const signOutSuccess = function () {
-  $('#message').text('Sign Out Successful')
+  $('#message').text('Signed Out Successfully')
   $('#create-game').hide()
   $('#show-games').hide()
   $('#sign-up').show()

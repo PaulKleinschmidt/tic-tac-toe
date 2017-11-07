@@ -115,6 +115,7 @@ const onCreateGame = function (event) {
   turns = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   $('.box').html('')
   const data = getFormFields(this)
+  console.log('here we have the data: ', data)
   event.preventDefault()
   api.createGame(data)
     .then(ui.createGameSuccess)
