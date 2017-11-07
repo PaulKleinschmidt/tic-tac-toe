@@ -34,12 +34,12 @@ const updateBoard = function () {
         store.gameState.game.over = false
         onUpdateGame()
       } else if (checkWin() !== false) {
-        $(this).html(changeTurn())
         store.gameState.game.cell.index = this.id
         store.gameState.game.cell.value = $(this).html()
         store.gameState.game.over = true
         console.log('this is working')
         onUpdateGame()
+        $(this).html(changeTurn())
       }
     }
   }

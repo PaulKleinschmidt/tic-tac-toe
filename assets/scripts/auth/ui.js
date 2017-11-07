@@ -14,6 +14,13 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   console.log(data)
   $('#message').text('Signed in Successful')
+  $('#sign-out').css('display', 'block')
+  $('#change-password').css('display', 'block')
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#create-game').css('display', 'block')
+  $('#show-games').css('display', 'block')
+
   store.user = data.user
 }
 
@@ -33,6 +40,11 @@ const changePasswordSuccess = function (data) {
 
 const signOutSuccess = function () {
   $('#message').text('Sign Out Successful')
+  $('#create-game').hide()
+  $('#show-games').hide()
+  $('#sign-up').show()
+  $('#sign-in').show()
+  $('#change-password').hide()
 }
 
 const signOutFailure = function () {
@@ -58,8 +70,9 @@ const updateGameFailiure = function (data) {
 }
 const showGamesSuccess = function (data) {
   $('#message').text('success')
-  console.log(data)
-  $('.ScrollStyle').text(data.games)
+  console.log(data.games.length)
+  $('.games-ui').html('you have played ' + data.games.length + ' games')
+  $('.games-ui').css('display', 'block')
 }
 const showGamesFailiure = function (data) {
   $('#message').text('cannot show games')

@@ -20,6 +20,7 @@ body {
   animation-name: test;
   animation-duration: 20s;
   animation-iteration-count: infinite;
+  font: helvetica;
 }
 
 .box {
@@ -42,11 +43,34 @@ h1 {
   size: 100px;
 }
 
-.ScrollStyle {
-    max-height: 150px;
+.games-ui {
     overflow-y: scroll;
-    max-width: 200px;
+    width: 200px;
+    height: 100px;
+    background-color: #FFFFF0;
+    float: left;
+    clear: both;
+    border: 5px solid black;
+    color: black;
+    display: none;
 }
+#change-password {
+  display: none;
+}
+#sign-out {
+  display: none;
+}
+#create-game {
+  display: none;
+}
+#show-games {
+  display: none;
+}
+#who-won {
+  float: right;
+
+}
+
 
 // .container {
 //   display: block;
