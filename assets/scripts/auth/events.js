@@ -23,20 +23,22 @@ const changeTurn = function () { // this function returns either x or o by short
 }
 
 const updateBoard = function () {
-  console.log($(this).html())
-  if (checkWin() === false) {
-    if (($(this).html() !== 'x') && ($(this).html() !== 'o')) {
-      $(this).html(changeTurn())
-      marks.splice(this.id, 1, $(this).html()) // adds the last x or o to the marks array
-      store.gameState.game.cell.index = this.id
-      store.gameState.game.cell.value = $(this).html()
-      store.gameState.game.over = false
+  if (($('#message').text() === 'Success') || ($('#message').text() === 'new game made' || $('#message').text() === 'game updated')) {
+    console.log($(this).html())
+    if (checkWin() === false) {
+      if (($(this).html() !== 'x') && ($(this).html() !== 'o')) {
+        $(this).html(changeTurn())
+        marks.splice(this.id, 1, $(this).html()) // adds the last x or o to the marks array
+        store.gameState.game.cell.index = this.id
+        store.gameState.game.cell.value = $(this).html()
+        store.gameState.game.over = false
+        console.log(store.gameState.game.over)
+        onUpdateGame()
+      } checkWin()
+    } else if (checkWin() !== false) {
+      store.gameState.game.over = true
       console.log(store.gameState.game.over)
-      onUpdateGame()
-    } checkWin()
-  } else if (checkWin() !== false) {
-    store.gameState.game.over = true
-    console.log(store.gameState.game.over)
+    }
   }
 }
 

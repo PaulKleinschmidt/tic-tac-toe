@@ -42,7 +42,7 @@ const signOutFailure = function () {
 const createGameSuccess = function (data) {
   $('#message').text('new game made')
   store.user.game = data.game
-  console.log('new game ' + data.game.games)
+  console.log('new game ' + data.game.cells)
 }
 const createGameFailure = function (data) {
   $('#message').text('please sign in first')
@@ -50,8 +50,10 @@ const createGameFailure = function (data) {
 }
 const updateGameSuccess = function (data) {
   $('#message').text('game updated')
-  console.log(store.user.game.over)
+  console.log(data.game)
   store.user.game.cells[store.gameState.game.cell.index] = store.gameState.game.cell.value
+  store.user.game.over = 'true'
+  console.log(store.user.game)
 }
 const updateGameFailiure = function (data) {
   $('#message').text('game could not be updated')
@@ -60,6 +62,7 @@ const updateGameFailiure = function (data) {
 const showGamesSuccess = function (data) {
   $('#message').text('success')
   console.log(data)
+  $('.ScrollStyle').text(data.games)
 }
 const showGamesFailiure = function (data) {
   $('#message').text('cannot show games')

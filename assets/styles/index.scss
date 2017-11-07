@@ -26,6 +26,13 @@ body {
 h1 {
   text-align: center;
 }
+
+.ScrollStyle {
+    max-height: 150px;
+    overflow-y: scroll;
+    max-width: 200px;
+}
+
 // .container {
 //   display: block;
 //   float: none;
