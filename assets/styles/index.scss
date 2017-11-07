@@ -2,19 +2,31 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 
-$background-color: #4e4e4e;
+$background-color: #669999;
 $font-color: #dfdfdf;
 $white: #fff;
+
+@keyframes test {
+  0% {background-color: #669999;}
+  25%{background-color: #33cc33}
+  50% {background-color: 	#8950bd;}
+  75%{background-color: #b82e2e}
+  100% {background-color: 	#669999;}
+}
 
 body {
   background-color: $background-color;
   color: $font-color;
+  animation-name: test;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
 }
 
 .box {
-  border: 1px solid $white;
+  border: 5px solid black;
   height: 200px;
   width: 200px;
+  background-color: #FFFFF0;
 }
 
 .col-centered {
@@ -25,6 +37,9 @@ body {
 
 h1 {
   text-align: center;
+  font-family: 'Give You Glory', cursive;
+  color: #FFFFF0;
+  size: 100px;
 }
 
 .ScrollStyle {

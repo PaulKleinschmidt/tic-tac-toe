@@ -50,9 +50,6 @@ const createGameFailure = function (data) {
 }
 const updateGameSuccess = function (data) {
   $('#message').text('game updated')
-  console.log(data.game)
-  store.user.game.cells[store.gameState.game.cell.index] = store.gameState.game.cell.value
-  store.user.game.over = 'true'
   console.log(store.user.game)
 }
 const updateGameFailiure = function (data) {

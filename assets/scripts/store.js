@@ -7,7 +7,7 @@ const store = {
         'index': '',
         'value': ''
       },
-      'over': false
+      'over': ''
     }
   }
 }

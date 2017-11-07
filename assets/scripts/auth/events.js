@@ -24,20 +24,23 @@ const changeTurn = function () { // this function returns either x or o by short
 
 const updateBoard = function () {
   if (($('#message').text() === 'Success') || ($('#message').text() === 'new game made' || $('#message').text() === 'game updated')) {
-    console.log($(this).html())
-    if (checkWin() === false) {
-      if (($(this).html() !== 'x') && ($(this).html() !== 'o')) {
+    if (($(this).html() !== 'x') && ($(this).html() !== 'o')) {
+      console.log('checkwin: ', checkWin())
+      marks.splice(this.id, 1, $(this).html())
+      if (checkWin() === false) {
         $(this).html(changeTurn())
-        marks.splice(this.id, 1, $(this).html()) // adds the last x or o to the marks array
         store.gameState.game.cell.index = this.id
         store.gameState.game.cell.value = $(this).html()
         store.gameState.game.over = false
-        console.log(store.gameState.game.over)
         onUpdateGame()
-      } checkWin()
-    } else if (checkWin() !== false) {
-      store.gameState.game.over = true
-      console.log(store.gameState.game.over)
+      } else if (checkWin() !== false) {
+        $(this).html(changeTurn())
+        store.gameState.game.cell.index = this.id
+        store.gameState.game.cell.value = $(this).html()
+        store.gameState.game.over = true
+        console.log('this is working')
+        onUpdateGame()
+      }
     }
   }
 }
@@ -109,6 +112,7 @@ const onCreateGame = function (event) {
 
 const onUpdateGame = function (event) {
   const data = store.gameState
+  console.log('here is the data ', data)
   api.updateGame(data)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailiure)
