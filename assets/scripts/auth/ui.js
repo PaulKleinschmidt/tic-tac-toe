@@ -21,6 +21,10 @@ const signInSuccess = function (data) {
   $('#create-game').css('display', 'block')
   $('#show-games').css('display', 'block')
 
+  $('#box').hover(function() {
+    $(this).css("background-color", 'yellow')
+  })
+
   store.user = data.user
 }
 
@@ -72,7 +76,7 @@ const updateGameFailiure = function (data) {
 const showGamesSuccess = function (data) {
   $('#message').text('success')
   console.log(data.games.length)
-  $('.games-ui').html('you have played ' + data.games.length + ' games')
+  $('.games-ui').html('You have played ' + data.games.length + ' games')
   $('.games-ui').css('display', 'block')
   $('.games-ui').show(50)
 }
