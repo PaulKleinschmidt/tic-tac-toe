@@ -47,10 +47,10 @@ h1 {
   font-family: 'Give You Glory', cursive;
   color: #FFFFF0;
   size: 100px;
+  padding: 25px;
 }
 
 .games-ui {
-    overflow-y: scroll;
     width: 200px;
     height: 100px;
     background-color: #FFFFF0;
@@ -83,12 +83,33 @@ h1 {
 
 }
 .events {
-  font-size: 15px;
   padding: 30px;
+  font-size: 15px;
   opacity: 0.75;
+  color: black;
 
 }
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
 
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+legend {
+  animation-name: slidein;
+  animation-duration: 1s;
+  color: black;
+  font-size: 20px;
+  padding: 5px;
+  font-family: 'Give You Glory', cursive;
+  font-weight: bold;
+}
 input {
   color: black;
 }
