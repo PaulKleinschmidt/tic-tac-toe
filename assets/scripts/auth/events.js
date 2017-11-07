@@ -26,9 +26,10 @@ const updateBoard = function () {
   if (($('#message').text() === 'Success') || ($('#message').text() === 'new game made' || $('#message').text() === 'game updated')) {
     if (($(this).html() !== 'x') && ($(this).html() !== 'o')) {
       console.log('checkwin: ', checkWin())
+      $(this).html(changeTurn())
       marks.splice(this.id, 1, $(this).html())
+      console.log(marks)
       if (checkWin() === false) {
-        $(this).html(changeTurn())
         store.gameState.game.cell.index = this.id
         store.gameState.game.cell.value = $(this).html()
         store.gameState.game.over = false
@@ -39,7 +40,9 @@ const updateBoard = function () {
         store.gameState.game.over = true
         console.log('this is working')
         onUpdateGame()
-        $(this).html(changeTurn())
+        $('#message').text('yay!')
+        $('#who-won').show()
+        $('#who-won').html($(this).html() + ' wins!')
       }
     }
   }

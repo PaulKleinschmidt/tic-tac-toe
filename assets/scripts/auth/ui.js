@@ -55,13 +55,14 @@ const createGameSuccess = function (data) {
   $('#message').text('new game made')
   store.user.game = data.game
   console.log('new game ' + data.game.cells)
+  $('#who-won').hide(500)
+  $('.games-ui').hide(500)
 }
 const createGameFailure = function (data) {
   $('#message').text('please sign in first')
   console.log(data)
 }
 const updateGameSuccess = function (data) {
-  $('#message').text('game updated')
   console.log(store.user.game)
 }
 const updateGameFailiure = function (data) {
@@ -73,6 +74,7 @@ const showGamesSuccess = function (data) {
   console.log(data.games.length)
   $('.games-ui').html('you have played ' + data.games.length + ' games')
   $('.games-ui').css('display', 'block')
+  $('.games-ui').show(50)
 }
 const showGamesFailiure = function (data) {
   $('#message').text('cannot show games')

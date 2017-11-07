@@ -24,10 +24,16 @@ body {
 }
 
 .box {
-  border: 5px solid black;
+  border: 1px solid rgba(255, 0, 0, .3);
   height: 200px;
   width: 200px;
   background-color: #FFFFF0;
+  font-size: 100px;
+  text-align: center;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, .60);
+  color: black;
+  font-family: 'Give You Glory';
 }
 
 .col-centered {
@@ -53,6 +59,10 @@ h1 {
     border: 5px solid black;
     color: black;
     display: none;
+    font-family: arial;
+    padding: 20px;
+    border: 1px solid rgba(255, 0, 0, .3);
+    background: rgba(255, 255, 255, .60);
 }
 #change-password {
   display: none;
@@ -68,7 +78,19 @@ h1 {
 }
 #who-won {
   float: right;
+  font-family: 'Give You Glory', cursive;
+  font-size: 50px;
 
+}
+.events {
+  font-size: 15px;
+  padding: 30px;
+  opacity: 0.75;
+
+}
+
+input {
+  color: black;
 }
 
 
