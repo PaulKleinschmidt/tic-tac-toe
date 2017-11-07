@@ -43,8 +43,6 @@ const createGameSuccess = function (data) {
   $('#message').text('new game made')
   store.user.game = data.game
   console.log('new game ' + data.game.games)
-  events.marks = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-  events.turns = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 const createGameFailure = function (data) {
   $('#message').text('please sign in first')

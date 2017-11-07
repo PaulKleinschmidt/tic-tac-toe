@@ -4,8 +4,8 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
 
-const marks = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-const turns = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+let marks = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+let turns = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const changeTurn = function () { // this function returns either x or o by shortening the turns array with shift(). alternating starting with o.
   let whosTurn = ''
@@ -95,6 +95,9 @@ const onSignOut = function (event) {
 }
 
 const onCreateGame = function (event) {
+  marks = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  turns = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  $('.box').html('')
   const data = getFormFields(this)
   event.preventDefault()
   api.createGame(data)
