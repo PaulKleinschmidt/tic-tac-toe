@@ -29,6 +29,7 @@ const updateBoard = function () {
       $(this).html(changeTurn())
       marks.splice(this.id, 1, $(this).html())
       console.log(marks)
+      let checkDraw = 0
       if (checkWin() === false) {
         store.gameState.game.cell.index = this.id
         store.gameState.game.cell.value = $(this).html()
@@ -43,6 +44,13 @@ const updateBoard = function () {
         $('#message').text('yay!')
         $('#who-won').show()
         $('#who-won').html($(this).html() + ' wins!')
+      } for (let i = 0; i < marks.length; i++) {
+        if (marks[i] !== 0) {
+          checkDraw += 1
+        }
+      } if (checkDraw === 9) {
+        $('#who-won').show()
+        $('#who-won').html('nobody wins!')
       }
     }
   }
