@@ -25,10 +25,8 @@ const changeTurn = function () { // this function returns either x or o by short
 const updateBoard = function () {
   if (($('#message').text() === 'Success') || ($('#message').text() === 'new game made' || $('#message').text() === 'game updated')) {
     if (($(this).html() !== 'x') && ($(this).html() !== 'o')) {
-      console.log('checkwin: ', checkWin())
       $(this).html(changeTurn())
       marks.splice(this.id, 1, $(this).html())
-      console.log(marks)
       let checkDraw = 0
       if (checkWin() === false) {
         store.gameState.game.cell.index = this.id
@@ -39,7 +37,6 @@ const updateBoard = function () {
         store.gameState.game.cell.index = this.id
         store.gameState.game.cell.value = $(this).html()
         store.gameState.game.over = true
-        console.log('this is working')
         onUpdateGame()
         $('#message').text('yay!')
         $('#who-won').show()
@@ -58,21 +55,21 @@ const updateBoard = function () {
 
 const checkWin = function () {
   if ((marks[0] === marks[1] && marks[1] === marks[2]) && (marks[0] !== 0)) { // horizontal wins
-    console.log(marks[0] + ' wins!')
+    return (marks[0] + ' wins!')
   } else if ((marks[3] === marks[4] && marks[4] === marks[5]) && (marks[3] !== 0)) {
-    console.log(marks[3] + ' wins!')
+    return (marks[3] + ' wins!')
   } else if ((marks[6] === marks[7] && marks[7] === marks[8]) && (marks[6] !== 0)) {
-    console.log(marks[6] + ' wins!')
+    return (marks[6] + ' wins!')
   } else if ((marks[0] === marks[3] && marks[3] === marks[6]) && (marks[0] !== 0)) { // vertical wins
-    console.log(marks[0] + ' wins!')
+    return (marks[0] + ' wins!')
   } else if ((marks[1] === marks[4] && marks[4] === marks[7]) && (marks[1] !== 0)) {
-    console.log(marks[1] + ' wins!')
+    return (marks[1] + ' wins!')
   } else if ((marks[2] === marks[5] && marks[5] === marks[8]) && (marks[2] !== 0)) {
-    console.log(marks[2] + ' wins!')
+    return (marks[2] + ' wins!')
   } else if ((marks[0] === marks[4] && marks[4] === marks[8]) && (marks[0] !== 0)) { // diagonal wins
-    console.log(marks[0] + ' wins!')
+    return (marks[0] + ' wins!')
   } else if ((marks[2] === marks[4] && marks[4] === marks[6]) && (marks[2] !== 0)) {
-    console.log(marks[2] + ' wins!')
+    return (marks[2] + ' wins!')
   } else {
     return false
   }
@@ -96,7 +93,6 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   const data = getFormFields(this)
-  console.log(data)
   event.preventDefault()
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
@@ -124,7 +120,6 @@ const onCreateGame = function (event) {
 
 const onUpdateGame = function (event) {
   const data = store.gameState
-  console.log('here is the data ', data)
   api.updateGame(data)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailiure)
