@@ -44,6 +44,7 @@ const signOutSuccess = function () {
   $('#sign-up').show()
   $('#sign-in').show()
   $('#change-password').hide()
+  $('#sign-out').hide()
 }
 
 const signOutFailure = function () {

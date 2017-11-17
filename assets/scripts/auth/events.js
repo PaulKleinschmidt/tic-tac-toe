@@ -45,7 +45,7 @@ const updateBoard = function () {
         if (marks[i] !== 0) {
           checkDraw += 1
         }
-      } if (checkDraw === 9) {
+      } if (checkDraw === 9 && checkWin() === false) {
         $('#who-won').show()
         $('#who-won').html('nobody wins!')
       }
@@ -100,6 +100,9 @@ const onChangePassword = function (event) {
 }
 
 const onSignOut = function (event) {
+  marks = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  turns = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  $('.box').html('')
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)

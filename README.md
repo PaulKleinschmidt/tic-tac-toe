@@ -1,8 +1,8 @@
 
 I pretty much followed the reccomended planning guide for this project. I started by building the game logic, then the api, then styling.
-I tried to stick to one problem at a time. I tried my best to stay organized but I feel that it still ended up being messy. Thats ok because it works!  
+I tried to stick to one problem at a time. I tried my best to stay organized but I feel that it still ended up being messy. Thats ok because it works!
 
-Unsolved: Multiplayer, getting different game statistics, more cool animations
+Additions for future iterations: Multiplayer, getting different game statistics, more cool animations, mobile compatibility
 
 Wireframe: https://imgur.com/Z9M07F2
 
@@ -14,4 +14,4 @@ User Stories: - As a user, I want to sign up, sign in, and change password
 
 Link to game: https://paulkleinschmidt.github.io/tic-tac-toe/
 
-technologies used: html, css, javascript
+Made with html, css, and javascript
