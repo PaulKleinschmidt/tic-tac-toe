@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic-Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Give+You+Glory" rel="stylesheet">
+
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+
+    <body class="container-fluid">
+
+      <h1>Tic-Tac-Toe</h1>
+      <div class="container">
+      <div class="games-ui">
+      </div>
+      <div id="who-won">
+      </div>
+
+        <div class="col-sm-7 col-centered">
+          <div class="row1">
+            <div class="col-md-4 box" id="0"></div>
+            <div class="col-md-4 box" id="1"></div>
+            <div class="col-md-4 box" id="2"></div>
+          </div>
+
+          <div class="row2">
+            <div class="col-md-4 box" id="3"></div>
+            <div class="col-md-4 box" id="4"></div>
+            <div class="col-md-4 box" id="5"></div>
+          </div>
+
+          <div class="row3">
+            <div class="col-md-4 box" id="6"></div>
+            <div class="col-md-4 box" id="7"></div>
+            <div class="col-md-4 box" id="8"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="events">
+
+      <form id="create-game">
+        <input type="submit" name="submit" value="New Game">
+      </form>
+
+      <form id="show-games">
+        <input type="submit" name="submit" value="Show Games">
+      </form>
+
+
+
+
+      <p id="message"></p>
+
+
+      <form id="sign-up">
+        <fieldset>
+          <legend>Sign up or Sign in to play!</legend>
+          <input type="text" id="sign-up-email" name="credentials[email]" placeholder="Email">
+          <input type="text" id="sign-up-password" name="credentials[password]" placeholder="Password">
+          <input type="text" id="sign-up-password-confirmation" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+          <input type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+
+      <form id="sign-in">
+        <fieldset>
+          <legend></legend>
+          <input type="text" id="sign-in-email" name="credentials[email]" placeholder="Email">
+          <input type="text" id="sign-in-password" name="credentials[password]" placeholder="Password">
+          <input type="submit" name="submit" value="Sign in!">
+        </fieldset>
+      </form>
+
+
+      <form id="change-password">
+        <legend>Change Password!</legend>
+        <input type="text" name="passwords[old]" placeholder="old password">
+        <input type="text" name="passwords[new]" placeholder="new password">
+        <input type="submit" name="submit" value="change-password!">
+      </form>
+
+
+      <form id="sign-out">
+        <legend>Sign Out</legend>
+        <input type="submit" name="submit" value="Sign Out">
+      </form>
+
+    </div>
+
+    </body>
+</html>
