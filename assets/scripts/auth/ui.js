@@ -41,6 +41,7 @@ const signOutSuccess = function () {
   $('#change-password').hide()
   $('#sign-out').hide()
   $('.box').hide()
+  $('.games-ui').hide(50)
 }
 
 const signOutFailure = function () {
@@ -63,7 +64,6 @@ const updateGameFailiure = function (data) {
   $('#message').text('game could not be updated')
 }
 const showGamesSuccess = function (data) {
-  $('#message').text('Success')
   $('.games-ui').html('You have played ' + data.games.length + ' games')
   $('.games-ui').css('display', 'block')
   $('.games-ui').show(50)
