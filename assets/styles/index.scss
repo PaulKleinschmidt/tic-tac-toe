@@ -28,6 +28,7 @@ body {
   height: 200px;
   width: 200px;
   background-color: #FFFFF0;
+  display: none;
   font-size: 100px;
   text-align: center;
   margin: 0 auto;
@@ -38,8 +39,8 @@ body {
 
 .col-centered {
   float: none;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+
 }
 
 h1 {
@@ -115,17 +116,9 @@ input {
 }
 
 #message {
-  color: rgba(255, 0, 0, .5);
+  color: rgba(255, 255, 255, .9);
   font: arial;
   font-size: 18px;
   font-weight: bold;
 
 }
-
-
-// .container {
-//   display: block;
-//   float: none;
-//   margin-left: auto;
-//   margin-right: auto;
-// }

@@ -1,31 +1,26 @@
 const store = require('../store')
 const events = require('./events')
 
-const signUpSuccess = function (data) {
+const signUpSuccess = function () {
   $('#message').text('Signed up successfully!')
 }
 
-const signUpFailure = function (error) {
+const signUpFailure = function () {
   $('#message').text('Error on sign up')
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Signed in Successfully')
+  $('#message').text('Signed in Successfully! Select \'new game\' to play.')
   $('#sign-out').css('display', 'block')
   $('#change-password').css('display', 'block')
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#create-game').css('display', 'block')
   $('#show-games').css('display', 'block')
-
-  $('#box').hover(function() {
-    $(this).css("background-color", 'yellow')
-  })
-
   store.user = data.user
 }
 
-const signInFailure = function (error) {
+const signInFailure = function () {
   $('#message').text('sign in failed')
 }
 
@@ -45,6 +40,7 @@ const signOutSuccess = function () {
   $('#sign-in').show()
   $('#change-password').hide()
   $('#sign-out').hide()
+  $('.box').hide()
 }
 
 const signOutFailure = function () {
@@ -56,6 +52,7 @@ const createGameSuccess = function (data) {
   store.user.game = data.game
   $('#who-won').hide(500)
   $('.games-ui').hide(500)
+  $('.box').fadeIn(100)
 }
 const createGameFailure = function (data) {
   $('#message').text('please sign in first')
